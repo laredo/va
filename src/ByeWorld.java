@@ -1,9 +1,10 @@
 import java.util.concurrent.ConcurrentHashMap;
 
-ConcurrentHashMap chm;
 
 class ByeWorld {
     
+    private static ConcurrentHashMap chm;
+
     public void run(String name, String category) { 
         synchronized (chm) {
             obj = chm.getName(name);
@@ -12,4 +13,5 @@ class ByeWorld {
                 chm.put(name, obj);
             }
         }
+    }
 }
